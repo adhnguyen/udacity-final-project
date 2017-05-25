@@ -2,13 +2,14 @@
 {% block content %}
     <a href="{{ url_for('getAllCategories') }}">Home</a>
     <a href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">Back</a>
+    
     <div class="course-content">
         <div class="course-info">
-            <h4>{{ course.name }}</h4>
+            <div class="heading">Course: {{ course.name }}</div>
             <p>{{ course.description }}</p>
         </div>
         <div class="course-img">
-            <img src="{{ course.img_url }}" alt=""/>
+            <img class="course-card-img" src="{{ course.img_url }}" alt=""/>
         </div>
         {% if course.intro_video_url %}
             <div class="intro-video">

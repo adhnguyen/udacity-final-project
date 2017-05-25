@@ -1,12 +1,14 @@
 /*Shared CSS*/
 body {
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
-	font-weight: 700;
+	font-weight: 400;
 }
 
-/*Category*/
-.category-card {
-
+.heading {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 15px;
+    border-bottom: 5px #24292e solid;
 }
 
 .add-section {
@@ -17,4 +19,40 @@ body {
     background-color: #fafafa;
 }
 
+.add-section:hover {
+    color: #1f78d1;
+    font-weight: 700;
+}
+
+/*Category*/
+.category-card {
+    height: 150px;
+    max-width: 300px;
+    background-color: #fafafa;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 150px;
+    vertical-align: middle;
+}
+.category-card:hover {
+    color: #1f78d1;
+    font-weight: 700;
+}
+
+.category-card-outer a {
+    text-decoration: none;
+}
+
 /*Course*/ 
+.course-card .thumbnail {
+    min-height: 300px;
+    max-width: 400px;
+}
+
+.course-card-img {
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}

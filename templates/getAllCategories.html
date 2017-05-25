@@ -1,12 +1,12 @@
 {% extends "main.html" %}
 {% block content %}
-    <h1>All Categories</h1>
+    <div class="heading">All Categories</div>
     <div class="row">
         {% for category in categories %}
-        <div class="col-sm-4 col-xs-6 category-card">
-            <a href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">
-                <div class="card-title">
-                    <h4>{{ category.name }}</h4>
+        <div class="col-md-4 col-sm-6 category-card-outer">
+            <a href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">      
+                <div class="category-card">
+                    {{ category.name }}
                 </div>
             </a>
             <div class="options-section">
@@ -20,8 +20,10 @@
         {% endfor %}
     </div>
     <div class="row">
-        <div class="col-xs-12 add-section">
-            <a href="{{ url_for('newCategory') }}">Add a new category</a>
-        </div>
+        <a href="{{ url_for('newCategory') }}">
+            <div class="col-xs-12 add-section">
+                Add a new category
+            </div>
+        </a>
     </div>
 {% endblock %}
