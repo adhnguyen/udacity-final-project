@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block content %}
+    <h2>New course:</h2>
+    <form action="{{ url_for('newCourse', category_id = category.id)}}" 
+        method="POST">
+        <label for="new-course-name">Name:</label>
+        <input id="new-course-name" name="name" placeholder=""/>
+        <br/>
+        <label for="new-course-description">Description:</label>
+        <input id="new-course-description" name="description" placeholder="Some description"/>
+        <br/>
+        <label for="new-course-img">Image URL:</label>
+        <input id="new-course-img" name="img-url" placeholder="www.example.com"/>
+        <br/>
+        <label for="new-course-description">Intro Video URL:</label>
+        <input id="new-course-description" name="intro-video-url" placeholder="www.example.com"/>
+        <br/>
+        <input type="submit" value="Create"/>
+        <a href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">Cancel</a>
+    </form>
+{% endblock %}

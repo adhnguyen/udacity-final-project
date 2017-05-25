@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+    <a href="{{ url_for('getAllCategories') }}">Home</a>
+    {% if not courses %}
+        <h1>Sorry, no available courses for the {{ category.name }} category yet.</h1>
+    {% else %}
+        <h1>All Courses from this category</h1>
+        {% for course in courses %} 
+        <div class="course-card">
+            <a href="{{ url_for('getCourseById', category_id = category.id, course_id = course.id) }}">
+                <div class="course-card-title">
+                    <h4>{{ course.name }}</h4>
+                </div>
+                <div class="course-card-img">
+                        <img src="{{ course.img_url }}" alt=""/>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    {% endif %}
+    
+    <a href="{{ url_for('newCourse', category_id = category.id) }}">Add a new course</a>
+{% endblock %}

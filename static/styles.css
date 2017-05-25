@@ -1,0 +1,20 @@
+/*Shared CSS*/
+body {
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+/*Category*/
+.category-card {
+
+}
+
+.add-section {
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+/*Course*/ 

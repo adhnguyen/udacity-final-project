@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% block content %}
+    <h2>Edit course:</h2>
+    <div>
+        <form action="" method="POST">
+            <label for="edit-course-name">Name:</label>
+            <input id="edit-course-name" name="name" value="{{ course.name }}"/>
+            <br/>
+            <label for="edit-course-description">Description:</label>
+            <input id="edit-course-description" name="description" value="{{ course.description }}"/>
+            <br/>
+            <label for="edit-course-img">Image URL:</label>
+            <input id="edit-course-img" name="img-url" value="{{ course.image_url }}"/>
+            <br/>
+            <label for="edit-course-description">Intro Video URL:</label>
+            <input id="edit-course-description" name="intro-video-url" value="{{ course.intro_video_url }}"/>
+            <br/>
+            
+            <input type="submit" value="Submit"/>
+            <a href="{{ url_for('getCourseById', category_id = category.id, course_id = course.id) }}">Cancel</a>
+        </form>
+    </div>
+{% endblock %}
