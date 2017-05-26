@@ -11,6 +11,15 @@ class Category(Base):
     name = Column(String(80), nullable = False)
     id = Column(Integer, primary_key = True)
 
+    @property
+    def serialize(self):
+        #Returns object data in easily serializable format
+        return {
+            'name': self.name,
+            'id': self.id
+        }
+
+
 class Course(Base):
     __tablename__ = 'course'
     name = Column(String(80), nullable = False)
@@ -20,6 +29,17 @@ class Course(Base):
     intro_video_url = Column(String(250))
     category_id = Column(Integer, ForeignKey('category.id'))
     category = relationship(Category)
+
+    @property
+    def serialize(self):
+        #Returns object data in easily serializable format
+        return {
+            'name': self.name,
+            'id': self.id,
+            'description': self.description,
+            'img-url': self.img_url
+        }
+
 
 #####EOF#####
 engine = create_engine('sqlite:///cs_training.db')

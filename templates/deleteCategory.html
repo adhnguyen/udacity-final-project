@@ -1,5 +1,5 @@
 <h2>Deleting a category also deletes all courses inside it. </h2>
-<h2>Are you sure you want to delete the {{ category.name }} category?</h2>
+<h2>Are you sure you want to delete the <span class="title-bold">{{ category.name }}</span> category?</h2>
 <form action="{{ url_for('deleteCategory', category_id = category.id) }}" method="POST">
     <input class="btn btn-success" type="submit" value="Delete">
     <a class="btn btn-danger" href="{{ url_for('getAllCategories') }}">Cancel</a>

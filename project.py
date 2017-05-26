@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
 app = Flask(__name__)
 
 from sqlalchemy import create_engine
@@ -29,7 +29,7 @@ session = DBSession()
 def showLogin():
     state = ''.join(random.choice(string.ascii_uppercase + string.digits) for i in xrange(32))
     login_session['state'] = state
-    return render_template('main.html', view = 'login', STATE = state)
+    return render_template('_main.html', view = 'login', STATE = state)
 
 @app.route('/gconnect', methods=['POST'])
 def gconnect():
@@ -81,7 +81,8 @@ def gconnect():
     if (stored_credentials is not None) and (gplus_id == store_gplus_id):
         response = make_response(json.dumps("Current user is already connected."), 200)
         response.headers['Content-Type'] = 'application/json'
-
+        return response
+        
     #Store the access token in the session for later use
     login_session['credentials'] = credentials.access_token
     login_session['gplus_id'] = gplus_id
@@ -97,8 +98,8 @@ def gconnect():
     login_session['email'] = data["email"]
 
     output = ''
-    output += '<div> Welcome, '+ login_session['username'] + '</div>'
-    output += '<img src= "' + login_session['picture'] +'" alt="..." style="width: 200px; height:200px;">'
+    output += '<div> Welcome, <span class="title-bold">'+ login_session['username'] + '</span></div>'
+    output += '<img src= "' + login_session['picture'] +'" alt="..." style="width: 150px; height:150px; border-radius: 75px; border: 3px solid #000; margin: 15px;">'
     output += '<div>'+ login_session['email'] +'</div>'
     return output
 
@@ -132,11 +133,16 @@ def gdisconnect():
         return response
 
 #JSON APIs to view all categories
-#@app.route('categories/JSON')
-#def getAllCategoriesJSON():
+@app.route('/categories/JSON')
+def getAllCategoriesJSON():
+    categories = session.query(Category).all()
+    return jsonify(Categories = [c.serialize for c in categories])
 
 #JSON APIs to view all courses of a category
-#@app.route('categories/<int:category_id>/courses/JSON')
+@app.route('/categories/<int:category_id>/courses/JSON')
+def getCoursesByCategoryIdJSON(category_id):
+    courses = session.query(Course).filter_by(category_id=category_id).all()
+    return jsonify(CoursesList = [c.serialize for c in courses])
 
 #Show all categories
 @app.route('/')
@@ -144,17 +150,16 @@ def gdisconnect():
 def getAllCategories():
     categories = session.query(Category).all()
     if 'username' not in login_session:
-        return render_template('main.html', view='publicGetAllCategories', login_session=login_session, categories=categories)
+        return render_template('_main.html', view='publicGetAllCategories', login_session=login_session, categories=categories)
     else:
         print 'login'
-        return render_template('main.html', view='getAllCategories', login_session=login_session, categories=categories)
+        return render_template('_main.html', view='getAllCategories', login_session=login_session, categories=categories)
 
 
 #Create a new category
 @app.route('/categories/new', methods=['GET', 'POST'])
 def newCategory():
     if 'username' not in login_session:
-        print "get here"
         return render_template('404.html')
     else:
         print login_session['username']
@@ -163,9 +168,13 @@ def newCategory():
                 categoryToAdd = Category(name = request.form['name'])
                 session.add(categoryToAdd)
                 session.commit()
-            return redirect(url_for('getAllCategories'))
+                flash('Successfully added the new category.')
+                return redirect(url_for('getAllCategories'))
+            else:
+                flash('Category name is required.', 'error')
+                return render_template('_main.html', view='newCategory', login_session=login_session)
         else:    
-            return render_template('main.html', view='newCategory', login_session=login_session)
+            return render_template('_main.html', view='newCategory', login_session=login_session)
 
 
 #Edit a category
@@ -174,14 +183,22 @@ def editCategory(category_id):
     if 'username' not in login_session:
         return render_template('404.html')
     else:
-        categoryToEdit = session.query(Category).filter_by(id = category_id).one()
+        try:
+            categoryToEdit = session.query(Category).filter_by(id = category_id).one()
+        except:
+            return render_template('404.html')  
+            
         if request.method == 'POST':
             if request.form['name']:
                 categoryToEdit.name = request.form['name']
-            session.add(categoryToEdit)
-            session.commit()
-            return redirect(url_for('getAllCategories'))
-        return render_template('main.html', view='editCategory', login_session=login_session, category=categoryToEdit)
+                session.add(categoryToEdit)
+                session.commit()
+                flash('Successfully edited the category.')
+                return redirect(url_for('getAllCategories'))
+            else:
+                flash('Category name is required.', 'error')
+                return render_template('_main.html', view='editCategory', login_session=login_session, category=categoryToEdit)
+        return render_template('_main.html', view='editCategory', login_session=login_session, category=categoryToEdit)
 
 #Delete a category
 @app.route('/categories/<int:category_id>/delete', methods=['GET','POST'])
@@ -189,27 +206,38 @@ def deleteCategory(category_id):
     if 'username' not in login_session:
         return render_template('404.html')
     else:
-        categoryToDelete = session.query(Category).filter_by(id = category_id).one()
+        try:
+            categoryToDelete = session.query(Category).filter_by(id = category_id).one()
+            tmp = categoryToDelete.name
+        except:
+            return render_template('404.html')  
+        
         coursesToDelete = session.query(Course).filter_by(category_id = category_id).all()
         if request.method == 'POST':
             for c in coursesToDelete:
                 session.delete(c)
             session.delete(categoryToDelete)
             session.commit()
+            flash('Successfully deleted the "'+ tmp +'" category and all of its sub-courses.')
             return redirect(url_for('getAllCategories'))
         else:
-            return render_template('main.html', view='deleteCategory', login_session=login_session, category=categoryToDelete)
-
-
+            return render_template('_main.html', view='deleteCategory', login_session=login_session, category=categoryToDelete)
+             
+        
 #Show all courses of a given category
 @app.route('/categories/<int:category_id>/courses')
 def getCoursesByCategoryId(category_id):
-    category = session.query(Category).filter_by(id = category_id).one()
+    try:
+        category = session.query(Category).filter_by(id = category_id).one()
+    except:
+        flash('Invalid category.', 'error')
+        return render_template('404.html')
+
     courses = session.query(Course).filter_by(category_id = category_id).all()
     if 'username' not in login_session:
-        return render_template('main.html', view='publicGetCoursesByCategoryId', login_session=login_session, category=category, courses=courses)
+        return render_template('_main.html', view='publicGetCoursesByCategoryId', login_session=login_session, category=category, courses=courses)
     else:
-        return render_template('main.html', 'getCoursesByCategoryId', login_session=login_session, category=category, courses=courses)
+        return render_template('_main.html', view='getCoursesByCategoryId', login_session=login_session, category=category, courses=courses)
 
 
 #Create a new course for a given category
@@ -218,7 +246,11 @@ def newCourse(category_id):
     if 'username' not in login_session:
         return render_template('404.html')
     else:
-        category = session.query(Category).filter_by(id = category_id).one()
+        try:
+            category = session.query(Category).filter_by(id = category_id).one()
+        except:
+            return render_template('404.html')
+
         if request.method == 'POST':
             if request.form['name']:
                 courseToAdd = Course(
@@ -227,11 +259,15 @@ def newCourse(category_id):
                     img_url = request.form['img-url'], 
                     intro_video_url = request.form['intro-video-url'], 
                     category_id = category_id)
-            session.add(courseToAdd)
-            session.commit()
-            return redirect(url_for('getCoursesByCategoryId', category_id = category_id))
+                flash('Successfully added the new course.')
+                session.add(courseToAdd)
+                session.commit()
+                return redirect(url_for('getCoursesByCategoryId', category_id = category_id))
+            else:
+                flash('Course name is required.', 'error')
+                return render_template('_main.html', view='newCourse', login_session=login_session, category = category)
         else:
-            return render_template('main.html', view='newCourse', login_session=login_session, category = category)
+            return render_template('_main.html', view='newCourse', login_session=login_session, category = category)
 
 
 #Edit a course
@@ -240,19 +276,27 @@ def editCourse(category_id, course_id):
     if 'username' not in login_session:
         return render_template('404.html')
     else:
-        category = session.query(Category).filter_by(id = category_id).one()
-        courseToEdit = session.query(Course).filter_by(id = course_id, category_id = category_id).one()
+        try:
+            category = session.query(Category).filter_by(id = category_id).one()
+            courseToEdit = session.query(Course).filter_by(id = course_id, category_id = category_id).one()
+        except:
+            return render_template('404.html')
+      
         if request.method == 'POST':
             if request.form['name']:
                 courseToEdit.name = request.form['name']
                 courseToEdit.description = request.form['description']
                 courseToEdit.img_url = request.form['img-url']
                 courseToEdit.intro_video_url = request.form['intro-video-url']
-            session.add(courseToEdit)
-            session.commit()
-            return redirect(url_for('getCoursesByCategoryId', category_id=category_id, course_id=course_id))
+                session.add(courseToEdit)
+                session.commit()
+                flash('Successfully edited the course profile.')
+                return redirect(url_for('getCoursesByCategoryId', category_id=category_id, course_id=course_id)) 
+            else:
+                flash('Course name is required.','error')
+                return render_template('_main.html', view='editCourse', login_session=login_session, category=category, course=courseToEdit)
         else:
-            return render_template('main.html', view='editCourse', login_session=login_session, category=category, course=courseToEdit)
+            return render_template('_main.html', view='editCourse', login_session=login_session, category=category, course=courseToEdit)
 
 
 #Delete a course
@@ -261,22 +305,37 @@ def deleteCourse(category_id, course_id):
     if 'username' not in login_session:
         return render_template('404.html')
     else:
-        category = session.query(Category).filter_by(id = category_id).one()
-        courseToDelete = session.query(Course).filter_by(id = course_id, category_id = category_id).one()
+        try:
+            category = session.query(Category).filter_by(id = category_id).one()
+            courseToDelete = session.query(Course).filter_by(id = course_id, category_id = category_id).one()
+        except:
+            return render_template('404.html')
+
         if request.method == 'POST':
             session.delete(courseToDelete)
             session.commit()
+            flash('Successfully deleted the course "'+ courseToDelete.name +'".')
             return redirect(url_for('getCoursesByCategoryId', category_id = category_id, course_id = course_id))
         else:
-            return render_template('main.html', view='deleteCourse', login_session=login_session, category=category, course=courseToDelete)
+            return render_template('_main.html', view='deleteCourse', login_session=login_session, category=category, course=courseToDelete)
 
 
 #Show a course
 @app.route('/categories/<int:category_id>/courses/<int:course_id>')
 def getCourseById(category_id, course_id):
-    category = session.query(Category).filter_by(id = category_id).one()
-    course = session.query(Course).filter_by(id = course_id, category_id = category_id).one()
-    return render_template('main.html', view='getCourseById', login_session=login_session, category = category, course = course)
+    try:
+        category = session.query(Category).filter_by(id = category_id).one()
+    except:
+        flash('Invalid category.', 'error')
+        return render_template('404.html')
+    
+    try:
+        course = session.query(Course).filter_by(id = course_id, category_id = category_id).one()
+    except:
+        flash('Invalid course.', 'error')
+        return render_template('404.html')
+
+    return render_template('_main.html', view='getCourseById', login_session=login_session, category = category, course = course)
 
 
 #Set the secret key

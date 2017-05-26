@@ -4,29 +4,37 @@ body {
 	font-weight: 400;
 }
 
+form {margin-top: 15px;}
+
+.navbar {margin-bottom: 30px;}
+
 .heading {
     font-size: 36px;
     font-weight: 700;
-    margin: 15px;
     border-bottom: 5px #24292e solid;
+    margin: 30px 0px;
 }
+.title-bold {font-weight: 700;}
 
 .add-section .fa-3 {
     font-size: 2em;
     vertical-align: middle;
 }
 
-.category-card.add-section, .course-card.add-section {
+.category-card.add-section, 
+.course-card.add-section {
     color: #fafafa;
     background-color: #0275d8;
 }
 
-.category-card.add-section:hover, .course-card.add-section:hover {
+.category-card.add-section:hover, 
+.course-card.add-section:hover {
     color: #fafafa;
     background-color: #025aa5;
 }
 
-.category-card-outer .btn-group .btn, .course-card-outer .btn-group .btn{
+.category-card-outer .btn-group .btn, 
+.course-card-outer .btn-group .btn{
     border: 0;
 }
 
@@ -50,13 +58,9 @@ body {
     font-weight: 700;
 }
 
-.category-card-outer {
-    margin:15px;
-}
+.category-card-outer {margin:15px;}
 
-.category-card-outer a {
-    text-decoration: none;
-}
+.category-card-outer a {text-decoration: none;}
 
 .category-card-outer .btn-group {
     margin-top: -15px;
@@ -64,14 +68,10 @@ body {
 }
 
 
-
 /*Course*/ 
-.course-card-outer {
-    padding: 20px;
-}
-.course-card-outer a {
-    text-decoration: none;
-}
+.course-card-outer {padding: 20px;}
+
+.course-card-outer a {text-decoration: none;}
 
 .course-card-outer .thumbnail {
     min-height: 340px;
@@ -86,11 +86,10 @@ body {
     transition: border .2s ease-in-out;
 }
 
-.course-card-outer .btn-group {
-    margin-top: -40px;
-} 
+.course-card-outer .btn-group {margin-top: -40px;} 
 
 .course-card-img {
+    background-color: #eff0f1;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
@@ -100,9 +99,7 @@ body {
     border-radius: 5px;
 }
 
-.course-card-outer .caption {
-    padding: 9px;
-}
+.course-card-outer .caption {padding: 9px;}
 
 .course-card-outer .add-section {
     height: 50px;
@@ -116,9 +113,7 @@ body {
     justify-content: center;
 }
 
-.intro-video {
-    margin: 30px;
-}
+.intro-video {margin: 30px;}
 
 /*404 Error page*/
 .error-template {
@@ -131,6 +126,4 @@ body {
     margin-bottom:15px;
 }
 
-.error-actions .btn { 
-    margin-right:10px; 
-}
+.error-actions .btn {margin-right:10px;}

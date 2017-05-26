@@ -2,7 +2,7 @@
     All courses for {{ category.name }}
 </div>
 {% if not courses %}
-<h2>Sorry, no available courses for the {{ category.name }} category yet.</h2>
+<h2>Sorry, no available courses for the <span class="title-bold">{{ category.name }}</span> category yet.</h2>
 {% else %}
 <div class="row">
     {% for course in courses %} 

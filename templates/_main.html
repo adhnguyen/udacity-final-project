@@ -29,20 +29,40 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('getAllCategories') }}">Home <span class="sr-only">(current)</span></a>
                         </li>
+                        {% if view == 'getCourseById' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('getCoursesByCategoryId', category_id=category.id) }}">Back <span class="sr-only">(current)</span></a>
+                        </li>
+                        {% endif %}
                     </ul>
                     
                     {% if 'username' not in login_session %}
                     <div id="notLoggedIn">
-                        <a class="btn btn-secondary" href="{{ url_for('showLogin')}}">Click to Sign In</a>
+                        <a class="btn btn-success" href="{{ url_for('showLogin')}}">Click to Sign In</a>
                     </div>
                     {% else %}
                     <div id="loggedIn">
-                        <a class="btn btn-secondary" href="{{ url_for('gdisconnect')}}">Log Out</a>
+                        <a class="btn btn-success" href="{{ url_for('gdisconnect')}}">Log Out</a>
                     </div>
                     {% endif %}
                 </div>
             </nav>
-            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'error' %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endif %}   
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
             {% block content %}
                 {% if view == 'login' %}
                     {% include 'login.html' %}
