@@ -1,15 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <!-- FontAwesome CSS -->
+        <link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
     </head>
     <body>
         <div class="container">
+            <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- As a heading -->
+                <h1 class="navbar-brand mb-0">TRAINING APP</h1>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('getAllCategories') }}">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    
+                    {% if 'username' not in login_session %}
+                    <div id="notLoggedIn">
+                        <a class="btn btn-secondary" href="{{ url_for('showLogin')}}">Click to Sign In</a>
+                    </div>
+                    {% else %}
+                    <div id="loggedIn">
+                        <a class="btn btn-secondary" href="{{ url_for('gdisconnect')}}">Log Out</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </nav>
+            
             {% block content %}
+                {% if view == 'login' %}
+                    {% include 'login.html' %}
+                {% endif %}
+
+                {% if view == 'publicGetAllCategories' %}
+                    {% include 'publicGetAllCategories.html' %}
+                {% endif %}
+
+                {% if view == 'getAllCategories' %}
+                    {% include 'getAllCategories.html' %}
+                {% endif %}
+
+                {% if view == 'newCategory' %}
+                    {% include 'newCategory.html' %}
+                {% endif %}
+                
+                {% if view == 'editCategory' %}
+                    {% include 'editCategory.html' %}
+                {% endif %}
+
+                {% if view == 'deleteCategory' %}
+                    {% include 'deleteCategory.html' %}
+                {% endif %}
+
+                {% if view == 'publicGetCoursesByCategoryId' %}
+                    {% include 'publicGetCoursesByCategoryId.html' %}
+                {% endif %}
+
+                {% if view == 'getCoursesByCategoryId' %}
+                    {% include 'getCoursesByCategoryId.html' %}
+                {% endif %}
+
+                {% if view == 'newCourse' %}
+                    {% include 'newCourse.html' %}
+                {% endif %}
+
+                {% if view == 'editCourse' %}
+                    {% include 'editCourse.html' %}
+                {% endif %}
+
+                {% if view == 'deleteCourse' %}
+                    {% include 'deleteCourse.html' %}
+                {% endif %}
+
+                {% if view == 'getCourseById' %}
+                    {% include 'getCourseById.html' %}
+                {% endif %}
             {% endblock %}
         </div>
+
+        {% block scripts %}
+            {% include '_scripts.html' %}
+        {% endblock %}
     </body>
 </html>

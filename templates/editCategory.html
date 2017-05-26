@@ -1,13 +1,12 @@
-{% extends "main.html" %}
-{% block content %}
-    <h2>Edit the <span>{{ category.name }}</span> category:</h2>
-    <div>
-        <form action="" method="POST">
-            <label for="edit-category">Name:</label>
-            <input id="edit-category" name="name" value="{{ category.name }}"/>
-            <br/>
-            <input type="submit" value="Submit"/>
-            <a href="{{ url_for('getAllCategories') }}">Cancel</a>
-        </form>
-    </div>
-{% endblock %}
+<h2>Edit the <span>{{ category.name }}</span> category:</h2>
+<div>
+    <form action="" method="POST">
+        <div class="row">
+            <label class="col-md-2" for="edit-category">Name:</label>
+            <input class="col-md-6" id="edit-category" name="name" value="{{ category.name }}"/>
+        </div>
+        <br/>
+        <input class="btn btn-success" type="submit" value="Submit"/>
+        <a class="btn btn-danger" href="{{ url_for('getAllCategories') }}">Cancel</a>
+    </form>
+</div>

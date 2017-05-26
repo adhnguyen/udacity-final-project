@@ -1,0 +1,23 @@
+<div class="heading">
+    All courses for {{ category.name }}
+</div>
+{% if not courses %}
+<h2>Sorry, no available courses for the {{ category.name }} category yet.</h2>
+{% else %}
+<div class="row">
+    {% for course in courses %} 
+    <div class="col-md-4 col-sm-6">
+        <div class="course-card-outer">
+            <a href="{{ url_for('getCourseById', category_id = category.id, course_id = course.id) }}">
+                <div class="thumbnail">
+                    <img class="course-card-img" src="{{ course.img_url }}" alt="..."/>
+                    <div class="course-card-title caption">
+                        <h4>{{ course.name }}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}

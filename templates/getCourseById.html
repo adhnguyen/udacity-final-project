@@ -1,25 +1,21 @@
-{% extends "main.html" %}
-{% block content %}
-    <a href="{{ url_for('getAllCategories') }}">Home</a>
-    <a href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">Back</a>
-    
-    <div class="course-content">
-        <div class="course-info">
-            <div class="heading">Course: {{ course.name }}</div>
-            <p>{{ course.description }}</p>
-        </div>
-        <div class="course-img">
-            <img class="course-card-img" src="{{ course.img_url }}" alt=""/>
-        </div>
-        {% if course.intro_video_url %}
-            <div class="intro-video">
-                <iframe width="420" height="315" src="{{ course.intro_video_url }}"></iframe>
+<a class="btn btn-info mt-2" href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">Back</a>
+<div class="course-content">
+    <div class="heading">Course: {{ course.name }}</div>
+        <div class="row">
+            <div class="course-info col-sm-4">
+                <p>{{ course.description }}</p>
             </div>
-        {% endif %}    
+            <div class="course-img col-sm-4">
+                <img class="course-card-img" src="{{ course.img_url }}" alt=""/>
+            </div>
+        </div>
+    
+    {% if course.intro_video_url %}
+        <div class="row">
+            <div class="intro-video">
+                <iframe width="560" height="315" src="{{ course.intro_video_url }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    {% endif %}    
     </div>
-    <div class="options-section">
-        <a href="{{ url_for('editCourse', category_id = category.id, course_id = course.id) }}">Edit</a>
-        <br/>
-        <a href="{{ url_for('deleteCourse', category_id = category.id, course_id = course.id) }}">Delete</a>    
-    </div>
-{% endblock %}
+</div>

@@ -1,23 +1,27 @@
-{% extends "main.html" %}
-{% block content %}
-    <h2>Edit course:</h2>
-    <div>
-        <form action="" method="POST">
-            <label for="edit-course-name">Name:</label>
-            <input id="edit-course-name" name="name" value="{{ course.name }}"/>
-            <br/>
-            <label for="edit-course-description">Description:</label>
-            <input id="edit-course-description" name="description" value="{{ course.description }}"/>
-            <br/>
-            <label for="edit-course-img">Image URL:</label>
-            <input id="edit-course-img" name="img-url" value="{{ course.image_url }}"/>
-            <br/>
-            <label for="edit-course-description">Intro Video URL:</label>
-            <input id="edit-course-description" name="intro-video-url" value="{{ course.intro_video_url }}"/>
-            <br/>
-            
-            <input type="submit" value="Submit"/>
-            <a href="{{ url_for('getCourseById', category_id = category.id, course_id = course.id) }}">Cancel</a>
-        </form>
-    </div>
-{% endblock %}
+<h2>Edit course:</h2>
+<div>
+    <form action="" method="POST">
+        <div class="row">
+            <label class="col-md-2" for="edit-course-name">Name:</label>
+            <input class="col-md-6" id="edit-course-name" name="name" value="{{ course.name }}"/>
+        </div>
+        <br/>
+        <div class="row">
+            <label class="col-md-2" for="edit-course-description">Description:</label>
+            <textarea class="col-md-6" id="edit-course-description" name="description">{{ course.description }}</textarea>
+        </div>
+        <br/>
+        <div class="row">
+            <label class="col-md-2" for="edit-course-img">Image URL:</label>
+            <input class="col-md-6" id="edit-course-img" name="img-url" value="{{ course.img_url }}"/>
+        </div>
+        <br/>
+        <div class="row">
+            <label class="col-md-2" for="edit-course-description">Intro Video URL:</label>
+            <input class="col-md-6" id="edit-course-description" name="intro-video-url" value="{{ course.intro_video_url }}"/>
+        </div>
+        <br/>
+        <input class="btn btn-success" type="submit" value="Submit"/>
+        <a class="btn btn-danger" href="{{ url_for('getCourseById', category_id = category.id, course_id = course.id) }}">Cancel</a>
+    </form>
+</div>
