@@ -1,66 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61ea237f-c4cc-4302-a6b9-d149ae23a7fd" name="Default" comment="refactor code following MVC pattern">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database_setup.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/project.py" afterPath="$PROJECT_DIR$/app/controllers.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/app/static/font-awesome/HELP-US-OUT.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/app/static/font-awesome/css/font-awesome.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/app/static/font-awesome/css/font-awesome.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/animated.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/bordered-pulled.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/core.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/fixed-width.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/font-awesome.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/icons.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/larger.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/list.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/mixins.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/path.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/rotated-flipped.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/screen-reader.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/stacked.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/variables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_bordered-pulled.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_core.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_fixed-width.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_icons.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_larger.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_list.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_mixins.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_path.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_rotated-flipped.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_screen-reader.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_stacked.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_variables.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/font-awesome.scss" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/static/styles.css" afterPath="$PROJECT_DIR$/app/static/styles.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/404.html" afterPath="$PROJECT_DIR$/app/templates/404.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/_main.html" afterPath="$PROJECT_DIR$/app/templates/_main.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/_scripts.html" afterPath="$PROJECT_DIR$/app/templates/_scripts.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/delete_category.html" afterPath="$PROJECT_DIR$/app/templates/delete_category.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/delete_course.html" afterPath="$PROJECT_DIR$/app/templates/delete_course.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/edit_category.html" afterPath="$PROJECT_DIR$/app/templates/edit_category.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/edit_course.html" afterPath="$PROJECT_DIR$/app/templates/edit_course.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/get_all_categories.html" afterPath="$PROJECT_DIR$/app/templates/get_all_categories.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/get_course_by_id.html" afterPath="$PROJECT_DIR$/app/templates/get_course_by_id.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/get_courses_by_categoryID.html" afterPath="$PROJECT_DIR$/app/templates/get_courses_by_categoryID.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/app/templates/login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_category.html" afterPath="$PROJECT_DIR$/app/templates/new_category.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_course.html" afterPath="$PROJECT_DIR$/app/templates/new_course.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/public_get_all_categories.html" afterPath="$PROJECT_DIR$/app/templates/public_get_all_categories.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/public_get_courses_by_categoryID.html" afterPath="$PROJECT_DIR$/app/templates/public_get_courses_by_categoryID.html" />
+    <list default="true" id="61ea237f-c4cc-4302-a6b9-d149ae23a7fd" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs_training.db" afterPath="$PROJECT_DIR$/cs_training.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs_training_data.py" afterPath="$PROJECT_DIR$/cs_training_data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,6 +64,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="adhnguyen &lt;adhnguyen94@gmail.com&gt;" />
         <option value="Anh Duong Ha Nguyen &lt;adhngyen94@gumail.com&gt;" />
         <option value="Anh Duong Ha Nguyen &lt;adhnguyen94@gmail.com&gt;refra" />
       </list>
@@ -185,20 +128,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -314,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496034336580</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactor code following MVC pattern">
+      <created>1496034376704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1496034376704</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -329,12 +265,12 @@
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="761" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2569956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2569956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
