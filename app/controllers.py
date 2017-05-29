@@ -1,25 +1,26 @@
-import httplib2
 import json
 import random
-import requests
 import string
 
-from flask import Flask
-from flask import flash
-from flask import jsonify
-from flask import make_response
-from flask import redirect, url_for
-from flask import render_template
-from flask import request
+import httplib2
+import requests
+from flask import (
+    Flask,
+    flash,
+    jsonify,
+    make_response,
+    redirect,
+    render_template,
+    request,
+    url_for
+)
 from flask import session as login_session
-
-from database_setup import Base, Category, Course
-
-from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
-
+from oauth2client.client import flow_from_clientsecrets
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+
+from app.models import Base, Category, Course
 
 app = Flask(__name__)
 
@@ -233,10 +234,10 @@ def delete_category(category_id):
         except:
             return render_template('404.html')
 
-        category = session.query(Course).filter_by(category_id=category_id).all()
+        courses = session.query(Course).filter_by(category_id=category_id).all()
         if request.method == 'POST':
-            for c in category:
-                session.delete(c)
+            for course in courses:
+                session.delete(course)
             session.delete(category)
             session.commit()
             flash('Successfully deleted the "' + tmp + '" category and all of its sub-courses.')
@@ -364,11 +365,3 @@ def get_course_by_id(category_id, course_id):
 
     return render_template('_main.html', view='get_course_by_id',
                            login_session=login_session, category=category, course=course)
-
-
-# Set the secret key
-app.secret_key = 'P\xb1\x97\ry(\xb4\xcc\x10\xd2\x9d\xc7\xc1\xaf2\x8f,\xac*\x98H\xdbi\xe7'
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run(host='0.0.0.0', port=5000)

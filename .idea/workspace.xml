@@ -1,22 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61ea237f-c4cc-4302-a6b9-d149ae23a7fd" name="Default" comment="added PEP8 style guide">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/deleteCategory.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/deleteCourse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/editCategory.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/editCourse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/getAllCategories.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/getCourseById.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/getCoursesByCategoryId.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/newCategory.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/newCourse.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/publicGetAllCategories.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/publicGetCoursesByCategoryId.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.py" afterPath="$PROJECT_DIR$/project.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/404.html" afterPath="$PROJECT_DIR$/templates/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/_main.html" afterPath="$PROJECT_DIR$/templates/_main.html" />
+    <list default="true" id="61ea237f-c4cc-4302-a6b9-d149ae23a7fd" name="Default" comment="refactor code following MVC pattern">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/database_setup.py" afterPath="$PROJECT_DIR$/app/models.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/project.py" afterPath="$PROJECT_DIR$/app/controllers.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/HELP-US-OUT.txt" afterPath="$PROJECT_DIR$/app/static/font-awesome/HELP-US-OUT.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/app/static/font-awesome/css/font-awesome.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/app/static/font-awesome/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/app/static/font-awesome/fonts/fontawesome-webfont.woff2" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/animated.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/animated.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/bordered-pulled.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/core.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/core.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/fixed-width.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/fixed-width.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/font-awesome.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/font-awesome.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/icons.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/icons.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/larger.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/larger.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/list.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/list.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/mixins.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/mixins.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/path.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/path.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/rotated-flipped.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/screen-reader.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/screen-reader.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/stacked.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/stacked.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/less/variables.less" afterPath="$PROJECT_DIR$/app/static/font-awesome/less/variables.less" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_bordered-pulled.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_core.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_core.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_fixed-width.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_icons.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_icons.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_larger.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_larger.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_list.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_list.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_mixins.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_path.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_path.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_rotated-flipped.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_screen-reader.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_screen-reader.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_stacked.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/_variables.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/_variables.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/font-awesome/scss/font-awesome.scss" afterPath="$PROJECT_DIR$/app/static/font-awesome/scss/font-awesome.scss" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/styles.css" afterPath="$PROJECT_DIR$/app/static/styles.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/404.html" afterPath="$PROJECT_DIR$/app/templates/404.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/_main.html" afterPath="$PROJECT_DIR$/app/templates/_main.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/_scripts.html" afterPath="$PROJECT_DIR$/app/templates/_scripts.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/delete_category.html" afterPath="$PROJECT_DIR$/app/templates/delete_category.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/delete_course.html" afterPath="$PROJECT_DIR$/app/templates/delete_course.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/edit_category.html" afterPath="$PROJECT_DIR$/app/templates/edit_category.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/edit_course.html" afterPath="$PROJECT_DIR$/app/templates/edit_course.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/get_all_categories.html" afterPath="$PROJECT_DIR$/app/templates/get_all_categories.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/get_course_by_id.html" afterPath="$PROJECT_DIR$/app/templates/get_course_by_id.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/get_courses_by_categoryID.html" afterPath="$PROJECT_DIR$/app/templates/get_courses_by_categoryID.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/app/templates/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_category.html" afterPath="$PROJECT_DIR$/app/templates/new_category.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/new_course.html" afterPath="$PROJECT_DIR$/app/templates/new_course.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/public_get_all_categories.html" afterPath="$PROJECT_DIR$/app/templates/public_get_all_categories.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/templates/public_get_courses_by_categoryID.html" afterPath="$PROJECT_DIR$/app/templates/public_get_courses_by_categoryID.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs_training.db" afterPath="$PROJECT_DIR$/cs_training.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs_training_data.py" afterPath="$PROJECT_DIR$/cs_training_data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,27 +71,17 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="project.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/project.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_course_by_id</find>
-      <find>get_course_by_i</find>
-      <find>get_course_by_I</find>
-      <find>get_course_by_ID</find>
       <find>get_course_by_x</find>
       <find>get_course_by_</find>
       <find>get_course_by_ca</find>
@@ -65,13 +99,33 @@
       <find>get_courses_by_category_</find>
       <find>get_courses_by_category_i</find>
       <find>get_courses_by_category_id</find>
+      <find>de</find>
+      <find>delete_</find>
+      <find>delete_ca</find>
+      <find>delete_cate</find>
+      <find>delete_categ</find>
+      <find>delete_catego</find>
+      <find>delete_categor</find>
+      <find>delete_category</find>
+      <find>delete</find>
+      <find>login</find>
+      <find>app</find>
+      <find>_main</find>
+      <find>client_</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>get_course_by_id</replace>
+      <replace>=</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Anh Duong Ha Nguyen &lt;adhngyen94@gumail.com&gt;" />
+        <option value="Anh Duong Ha Nguyen &lt;adhnguyen94@gmail.com&gt;refra" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -80,7 +134,22 @@
         <option value="$PROJECT_DIR$/templates/_main.html" />
         <option value="$PROJECT_DIR$/templates/get_courses_by_category_ID.html" />
         <option value="$PROJECT_DIR$/templates/public_get_courses_by_category_ID.html" />
+        <option value="$PROJECT_DIR$/database_setup.py" />
+        <option value="$PROJECT_DIR$/cs_training_data.py" />
+        <option value="$PROJECT_DIR$/templates/delete_category.html" />
+        <option value="$PROJECT_DIR$/templates/get_all_categories.html" />
         <option value="$PROJECT_DIR$/project.py" />
+        <option value="$PROJECT_DIR$/controllers/auth_controller.py" />
+        <option value="$PROJECT_DIR$/models/category_model.py" />
+        <option value="$PROJECT_DIR$/models/course_model.py" />
+        <option value="$PROJECT_DIR$/controllers/controller.py" />
+        <option value="$PROJECT_DIR$/controllers/controllers.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/controllers/controllers.py" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
+        <option value="$PROJECT_DIR$/app/models/models.py" />
+        <option value="$PROJECT_DIR$/app/controllers.py" />
+        <option value="$PROJECT_DIR$/run.py" />
       </list>
     </option>
   </component>
@@ -129,7 +198,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -140,6 +209,14 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/OLD" />
+      <recent name="$PROJECT_DIR$/controllers" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -230,6 +307,14 @@
       <option name="presentableId" value="Default" />
       <updated>1496026788532</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactor code following MVC pattern">
+      <created>1496034336580</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1496034336580</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -243,14 +328,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="43" width="1400" height="761" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25773194" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2569956" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -264,16 +348,68 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25773194" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor code with MVC" />
+    <MESSAGE value="refactor code with MVC patterns" />
+    <MESSAGE value="refactor code following MVC pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor code following MVC pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/get_course_by_id.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/get_course_by_id.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -281,7 +417,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/get_courses_by_categoryID.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/get_courses_by_categoryID.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
@@ -289,7 +425,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/_main.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/_main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="111" column="32" lean-forward="false" selection-start-line="111" selection-start-column="32" selection-end-line="111" selection-end-column="32" />
@@ -297,7 +433,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/public_get_courses_by_categoryID.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/public_get_courses_by_categoryID.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
@@ -305,13 +441,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.py">
+    <entry file="file://$PROJECT_DIR$/README.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/get_all_categories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/auth_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLD/database_setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OLD/projects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="148" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="375" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cs_training_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/delete_category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="55" lean-forward="true" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/category_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/course_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client_secrets.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="45" column="41" lean-forward="true" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="20" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
