@@ -88,10 +88,8 @@ def delete_category(category_id):
         except:
             return render_template('404.html')
 
-        courses = session.query(Course).filter_by(category_id=category_id).all()
         if request.method == 'POST':
-            for course in courses:
-                session.delete(course)
+            session.delete(Course).filter_by(category_id=category_id).all()
             session.delete(category)
             session.commit()
             flash('Successfully deleted the "' + tmp + '" category and all of its sub-courses.')
