@@ -1,22 +1,10 @@
+from app.database import Base
+
+from category_model import Category
+
 from sqlalchemy import Column, ForeignKey, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-Base = declarative_base()
-
-
-class Category(Base):
-    __tablename__ = 'category'
-    name = Column(String(80), nullable=False)
-    id = Column(Integer, primary_key=True)
-
-    @property
-    def serialize(self):
-        # Return object data in easily serializable format
-        return {
-            'name': self.name,
-            'id': self.id
-        }
 
 class Course(Base):
     __tablename__ = 'course'

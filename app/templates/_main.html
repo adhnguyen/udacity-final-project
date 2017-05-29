@@ -27,22 +27,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('get_all_categories') }}">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ url_for('category.get_all_categories') }}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         {% if view == 'get_course_by_id' %}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url_for('get_courses_by_categoryID', category_id=category.id) }}">Back <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ url_for('course.get_courses_by_categoryID', category_id=category.id) }}">Back <span class="sr-only">(current)</span></a>
                         </li>
                         {% endif %}
                     </ul>
                     
                     {% if 'username' not in login_session %}
                     <div id="notLoggedIn">
-                        <a class="btn btn-success" href="{{ url_for('show_login')}}">Click to Sign In</a>
+                        <a class="btn btn-success" href="{{ url_for('auth.show_login')}}">Click to Sign In</a>
                     </div>
                     {% else %}
                     <div id="loggedIn">
-                        <a class="btn btn-success" href="{{ url_for('gdisconnect')}}">Log Out</a>
+                        <a class="btn btn-success" href="{{ url_for('auth.gdisconnect')}}">Log Out</a>
                     </div>
                     {% endif %}
                 </div>
@@ -65,51 +65,51 @@
 
             {% block content %}
                 {% if view == 'login' %}
-                    {% include 'login.html' %}
+                    {% include 'auth/login.html' %}
                 {% endif %}
 
                 {% if view == 'public_get_all_categories' %}
-                    {% include 'public_get_all_categories.html' %}
+                    {% include 'public/get_all_categories.html' %}
                 {% endif %}
 
                 {% if view == 'get_all_categories' %}
-                    {% include 'get_all_categories.html' %}
+                    {% include 'category/get_all_categories.html' %}
                 {% endif %}
 
                 {% if view == 'new_category' %}
-                    {% include 'new_category.html' %}
+                    {% include 'category/new_category.html' %}
                 {% endif %}
                 
                 {% if view == 'edit_category' %}
-                    {% include 'edit_category.html' %}
+                    {% include 'category/edit_category.html' %}
                 {% endif %}
 
                 {% if view == 'delete_category' %}
-                    {% include 'delete_category.html' %}
+                    {% include 'category/delete_category.html' %}
                 {% endif %}
 
                 {% if view == 'public_get_courses_by_categoryID' %}
-                    {% include 'public_get_courses_by_categoryID.html' %}
+                    {% include 'public/get_courses_by_categoryID.html' %}
                 {% endif %}
 
                 {% if view == 'get_courses_by_categoryID' %}
-                    {% include 'get_courses_by_categoryID.html' %}
+                    {% include 'course/get_courses_by_categoryID.html' %}
                 {% endif %}
 
                 {% if view == 'new_course' %}
-                    {% include 'new_course.html' %}
+                    {% include 'course/new_course.html' %}
                 {% endif %}
 
                 {% if view == 'edit_course' %}
-                    {% include 'edit_course.html' %}
+                    {% include 'course/edit_course.html' %}
                 {% endif %}
 
                 {% if view == 'delete_course' %}
-                    {% include 'delete_course.html' %}
+                    {% include 'course/delete_course.html' %}
                 {% endif %}
 
                 {% if view == 'get_course_by_id' %}
-                    {% include 'get_course_by_id.html' %}
+                    {% include 'course/get_course_by_id.html' %}
                 {% endif %}
             {% endblock %}
         </div>

@@ -8,7 +8,7 @@
 {% for course in courses %} 
 <div class="col-md-4 col-sm-6">
     <div class="course-card-outer">
-        <a href="{{ url_for('get_course_by_id', category_id = category.id, course_id = course.id) }}">
+        <a href="{{ url_for('course.get_course_by_id', category_id = category.id, course_id = course.id) }}">
             <div class="thumbnail">
                 <img class="course-card-img" src="{{ course.img_url }}" alt=""/>
                 <div class="course-card-title caption">
@@ -23,8 +23,8 @@
                 More
             </button>
             <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="{{ url_for('edit_course', category_id = category.id, course_id = course.id) }}">Edit</a>
-                <a class="dropdown-item" href="{{ url_for('delete_course', category_id = category.id, course_id = course.id) }}">Delete</a>    
+                <a class="dropdown-item" href="{{ url_for('course.edit_course', category_id = category.id, course_id = course.id) }}">Edit</a>
+                <a class="dropdown-item" href="{{ url_for('course.delete_course', category_id = category.id, course_id = course.id) }}">Delete</a>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
 {% endif %}
 <div class="col-sm-12">
     <div class="course-card-outer">
-        <a href="{{ url_for('new_course', category_id = category.id) }}">      
+        <a href="{{ url_for('course.new_course', category_id = category.id) }}">
             <div class="category-card add-section">
                 <i class="fa fa-plus mr-2" aria-hidden="true"></i>
                 Add a new course

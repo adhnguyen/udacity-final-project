@@ -22,6 +22,6 @@
         </div>
         <br/>
         <input class="btn btn-success" type="submit" value="Submit"/>
-        <a class="btn btn-danger" href="{{ url_for('get_courses_by_categoryID', category_id = category.id, course_id = course.id) }}">Cancel</a>
+        <a class="btn btn-danger" href="{{ url_for('course.get_courses_by_categoryID', category_id = category.id, course_id = course.id) }}">Cancel</a>
     </form>
 </div>

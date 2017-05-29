@@ -20,17 +20,20 @@ from oauth2client.client import flow_from_clientsecrets
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.models import Base, Category, Course
+# from app.models import Base, Category, Course
+from app.models.category_model import Category
+from app.models.course_model import Course
+from app.database import session
 
 app = Flask(__name__)
 
-# Connect to Database and create database session
+""" # Connect to Database and create database session
 engine = create_engine('sqlite:///cs_training.db')
 Base.metadata.bind = engine
 
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-
+"""
 CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())['web']['client_id']
 
 
@@ -170,7 +173,6 @@ def get_all_categories():
         return render_template('_main.html', view='public_get_all_categories',
                                login_session=login_session, categories=categories)
     else:
-        print 'login'
         return render_template('_main.html', view='get_all_categories',
                                login_session=login_session, categories=categories)
 

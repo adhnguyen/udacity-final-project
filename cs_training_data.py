@@ -42,7 +42,7 @@ session.commit()
 course2 = Course(name='The Web Developer Bootcamp',
                  description='The only course you need to learn web development - HTML, CSS, JS, Node, and More!',
                  img_url='https://udemy-images.udemy.com/course/750x422/625204_436a_2.jpg',
-                 intro_video_url='',
+                 intro_video_url='https://www.youtube.com/embed/P6uvOFn42NU',
                  category_id=category1.id)
 
 session.add(course2)
@@ -57,7 +57,7 @@ course3 = Course(name='Build Responsive Real World Websites with HTML5 and CSS3'
                              'all the real-world skills to build real-world HTML5 and CSS3 websites. '
                              'This will allow you to build any website you can imagine... From complete scratch.',
                  img_url='https://udemy-images.udemy.com/course/750x422/437398_46c3_8.jpg',
-                 intro_video_url='',
+                 intro_video_url='https://www.youtube.com/embed/H6eoOJhhqLI',
                  category_id=category1.id)
 
 session.add(course3)
@@ -73,7 +73,7 @@ course1 = Course(name='The Complete Android N Developer Course',
                  description='Learn to make and market apps for Android 7 Nougat by building real apps '
                              'including Uber, Whatsapp and Instagram clones.',
                  img_url='https://udemy-images.udemy.com/course/750x422/951618_0839_2.jpg',
-                 intro_video_url='',
+                 intro_video_url='https://www.youtube.com/embed/AWnbgE6YPWE',
                  category_id=category2.id)
 
 session.add(course1)
@@ -83,7 +83,7 @@ course2 = Course(name='The Complete iOS 10 Developer Course',
                  description='Use Xcode 8 & Swift 3 to make real apps like Uber, Instagram & Flappy Bird. '
                              'Includes free web hosting, assets & ebook.',
                  img_url='https://udemy-images.udemy.com/course/750x422/895786_7b4b_2.jpg',
-                 intro_video_url='',
+                 intro_video_url='https://www.youtube.com/embed/tEFIiPpGiCQ',
                  category_id=category2.id)
 
 session.add(course2)
