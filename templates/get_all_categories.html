@@ -3,7 +3,7 @@
     {% for category in categories %}
     <div class="col-md-4 col-sm-6">
         <div class="category-card-outer">
-            <a href="{{ url_for('getCoursesByCategoryId', category_id = category.id) }}">      
+            <a href="{{ url_for('get_courses_by_categoryID', category_id = category.id) }}">      
             <div class="category-card">
                 <div>{{ category.name }}</div>
             </div>
@@ -15,8 +15,8 @@
                     More
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="{{ url_for('editCategory', category_id = category.id ) }}">Edit</a>
-                    <a class="dropdown-item" href="{{ url_for('deleteCategory', category_id = category.id ) }}">Delete</a>
+                    <a class="dropdown-item" href="{{ url_for('edit_category', category_id = category.id ) }}">Edit</a>
+                    <a class="dropdown-item" href="{{ url_for('delete_category', category_id = category.id ) }}">Delete</a>
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@
     {% endfor %}
     <div class="col-md-4 col-sm-6">
         <div class="category-card-outer">
-            <a href="{{ url_for('newCategory') }}">      
+            <a href="{{ url_for('new_category') }}">      
                 <div class="category-card add-section">
                     <i class="fa fa-plus fa-3" aria-hidden="true"></i>
                 </div>
