@@ -1,40 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61ea237f-c4cc-4302-a6b9-d149ae23a7fd" name="Default" comment="update refactor code following MVC pattern">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/auth_controller.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/category_controller.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/course_controller.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/database.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/category_model.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/catalog.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/controllers.py" afterPath="$PROJECT_DIR$/app/controllers/controller.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models/course_model.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/delete_category.html" afterPath="$PROJECT_DIR$/app/templates/category/delete_category.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/delete_course.html" afterPath="$PROJECT_DIR$/app/templates/course/delete_course.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/edit_category.html" afterPath="$PROJECT_DIR$/app/templates/category/edit_category.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/edit_course.html" afterPath="$PROJECT_DIR$/app/templates/course/edit_course.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/get_all_categories.html" afterPath="$PROJECT_DIR$/app/templates/category/get_all_categories.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/get_course_by_id.html" afterPath="$PROJECT_DIR$/app/templates/course/get_course_by_id.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/get_courses_by_categoryID.html" afterPath="$PROJECT_DIR$/app/templates/course/get_courses_by_categoryID.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/login.html" afterPath="$PROJECT_DIR$/app/templates/auth/login.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/new_category.html" afterPath="$PROJECT_DIR$/app/templates/category/new_category.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/new_course.html" afterPath="$PROJECT_DIR$/app/templates/course/new_course.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/public_get_all_categories.html" afterPath="$PROJECT_DIR$/app/templates/public/get_all_categories.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/templates/public_get_courses_by_categoryID.html" afterPath="$PROJECT_DIR$/app/templates/public/get_courses_by_categoryID.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/__init__.py" afterPath="$PROJECT_DIR$/app/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/404.html" afterPath="$PROJECT_DIR$/app/templates/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/_main.html" afterPath="$PROJECT_DIR$/app/templates/_main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/_scripts.html" afterPath="$PROJECT_DIR$/app/templates/_scripts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cs_training_data.py" afterPath="$PROJECT_DIR$/cs_training_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run.py" afterPath="$PROJECT_DIR$/run.py" />
+    <list default="true" id="61ea237f-c4cc-4302-a6b9-d149ae23a7fd" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,7 +14,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="database.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/database.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -337,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496034376704</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update refactor code following MVC pattern">
+      <created>1496066293097</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1496066293097</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="2">
@@ -351,13 +336,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27539343" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32771084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32771084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -427,7 +413,8 @@
     <MESSAGE value="refactor code with MVC" />
     <MESSAGE value="refactor code with MVC patterns" />
     <MESSAGE value="refactor code following MVC pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code following MVC pattern" />
+    <MESSAGE value="update refactor code following MVC pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="update refactor code following MVC pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -635,14 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" lean-forward="false" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controller/auth_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -812,6 +791,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="19" column="36" lean-forward="true" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>
