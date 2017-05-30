@@ -20,5 +20,3 @@ def init_db():
     import app.models.category_model
     import app.models.course_model
     Base.metadata.create_all(bind=engine)
-
-

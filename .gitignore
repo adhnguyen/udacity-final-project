@@ -3,3 +3,4 @@
 cs_training.db
 *.pyc
 .idea
+.DS_Store
